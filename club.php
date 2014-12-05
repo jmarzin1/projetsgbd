@@ -15,9 +15,9 @@
         <p>
             <?php
                 $clubRepository = new ClubRepository();
-foreach ($clubRepository->findAll() as $club) {
-    $club->toString();
-}
+                foreach ($clubRepository->findAll() as $club) {
+                    $club->toString();
+                }
             ?>
         </p>
 
