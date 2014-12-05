@@ -1,0 +1,7 @@
+nav
+{
+    display: inline-block;
+    width: 200px;
+    border: 1px solid black;
+    vertical-align: top;
+}
