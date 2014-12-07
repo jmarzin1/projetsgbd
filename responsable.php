@@ -1,3 +1,5 @@
+<?php include("models/responsable.php"); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,38 +8,31 @@
     
     
     <body>
-	
 	<!-- L'en-tête -->
 	<?php include("header.php"); ?> 
 	
 	<!-- Menu -->
 	<?php include("menu.php"); ?> 
 
-	<!-- connexion + chargement requetes  -->
-	<?php 
-	include("connexionbase.php");
-	include("requetes.php");
-	?>
-
         <p>
 	    <?php 
-	    $reponse = NULL;
-	    if (isset($_GET['noclub'])) 
+	    $responsableRepository = new ResponsableRepository;
+	    if (isset($_GET['noclub']))
 	    {
-		// 1 : On force la conversion en nombre entier
 		$_GET['noclub'] = (int) $_GET['noclub'];
 		$noclub = mysql_real_escape_string($_GET['noclub']);
-		
-		requeteBureau($noclub, $reponse, $bdd);
-		
+		foreach($responsableRepository->findByNoClub($noclub) as $responsable) {
+		    $responsable->toString();
+		}
 	    }
-	    else
-	    {
-		requeteGenBureau($reponse, $bdd);
+	    else {
+		foreach ($responsableRepository->findAll() as $responsable) {
+		    $responsable->toString();
+		}
 	    }
 	    ?>
 	</p>
 	<!-- footer -->
-	<?php include("foot.php"); ?> 
+	<?php include("footer.php"); ?> 
     </body>
 </html>
