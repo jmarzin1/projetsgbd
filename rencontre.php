@@ -1,4 +1,4 @@
-<?php include("models/equipe.php"); ?>
+<?php include("models/rencontre.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -16,9 +16,9 @@
 	
 	<p>
 	    <?php 
-	    $equipeRepository = new EquipeRepository();
-	    foreach ($equipeRepository->findAll() as $equipe) {
-		$equipe->toString();
+	    $rencontreRepository = new RencontreRepository();
+	    foreach ($rencontreRepository->findAll() as $rencontre) {
+		$rencontre->toString();
 	    }
 	    ?>
 	</p>
