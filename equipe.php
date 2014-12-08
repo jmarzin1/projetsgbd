@@ -15,10 +15,20 @@
 	<?php include("menu.php"); ?> 
 	
 	<p>
-	    <?php 
+	    <?php
 	    $equipeRepository = new EquipeRepository();
-	    foreach ($equipeRepository->findAll() as $equipe) {
-		$equipe->toString();
+	    if (isset($_GET['id']))
+	    {
+		$_GET['id'] = (int) $_GET['id'];
+		$id = mysql_real_escape_string($_GET['id']);
+		foreach($equipeRepository->findByClubId($id) as $equipe) {
+		    $equipe->toStringClub();
+		}
+	    }
+	    else {
+		foreach ($equipeRepository->findAll() as $equipe) {
+		    $equipe->toString();
+		}
 	    }
 	    ?>
 	</p>
