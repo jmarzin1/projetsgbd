@@ -1,43 +1,23 @@
-<!DOCTYPE html>
-<html>
+<?php include("header.php"); ?>
+<?php
+    include("connexionbase.php");
+    include("requetes.php");
+?>
 
-    <!-- head -->
-    <?php include("head.php"); ?> 
-    
-    
-    <body>
-	
-	<!-- L'en-tête -->
-	<?php include("header.php"); ?> 
-	
-	<!-- Menu -->
-	<?php include("menu.php"); ?> 
+<p>
+    <?php
+        $reponse = NULL;
+        if (isset($_GET['noclub']))
+        {
+            // 1 : On force la conversion en nombre entier
+            $_GET['noclub'] = (int) $_GET['noclub'];
+            $noclub = mysql_real_escape_string($_GET['noclub']);
 
-	<!-- connexion + chargement requetes-->
-	<?php 
-	include("connexionbase.php");
-	include("requetes.php");
-	?>
+            requeteEntraineur($noclub, $reponse, $bdd);
 
-        <p>
-	    <?php 
-	    $reponse = NULL;
-	    if (isset($_GET['noclub'])) 
-	    {
-		// 1 : On force la conversion en nombre entier
-		$_GET['noclub'] = (int) $_GET['noclub'];
-		$noclub = mysql_real_escape_string($_GET['noclub']);
-		
-		requeteEntraineur($noclub, $reponse, $bdd);
-
-	    }
-	    else 
-	    {
-		requeteGenEntraineur($reponse, $bdd);
-	    }
-	    ?>
-	</p>
-	<!-- footer -->
-	<?php include("foot.php"); ?> 
-    </body>
-</html>
+        } else {
+            requeteGenEntraineur($reponse, $bdd);
+        }
+    ?>
+</p>
+<?php include("footer.php"); ?>
