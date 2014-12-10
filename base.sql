@@ -9,7 +9,6 @@ drop table if exists JOUEUR cascade;
 drop table if exists EQUIPE cascade;
 drop table if exists ENTRAINEUR cascade;
 drop table if exists RENCONTRE cascade;
-drop table if exists CATEGORIE cascade;
 drop table if exists ANIMATION cascade;
 drop table if exists ENTREE cascade;
 drop table if exists PARTICIPATION cascade;
@@ -92,7 +91,7 @@ create table JOUEUR
     PRENOM_JOUEUR              CHAR(30),
     NOM_JOUEUR           CHAR(30),
     DATE_NAISSANCE_JOUEUR   DATE,
-    NUMERO_EQUIPE           INT(11)     not null,
+    NUMERO_EQUIPE           INT(11),
     constraint pk_joueur primary key (NUMERO_LICENCE),
     constraint fk1_joueur foreign key (NUMERO_EQUIPE)
         references EQUIPE (NUMERO_EQUIPE)

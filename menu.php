@@ -9,5 +9,6 @@
         <li><a href="rencontre.php">Rencontres</a></li>
         <li><a href="statistiques.php">Statistiques</a></li>
         <li><a href="ajoutclub.php">Ajout Club</a></li>
+        <li><a href="ajoutjoueur.php">Ajout Joueur</a></li>
     </ul>
 </nav>
