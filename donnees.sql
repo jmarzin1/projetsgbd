@@ -9,7 +9,6 @@ delete from RENCONTRE ;
 delete from ENTRAINE ;
 delete from ENTRAINEUR ;
 delete from EQUIPE ;
-delete from CATEGORIE ;
 delete from RESPONSABLE ;
 delete from CLUB ; 
 
@@ -40,25 +39,14 @@ insert into RESPONSABLE values (6, 5, 'CECILE', 'PICARD', 'PRESIDENTE');
 
 commit;
 
--- CATEGORIE 
-
-insert into CATEGORIE values (1, 'SENIOR');
-insert into CATEGORIE values (2, 'SENIOR');
-insert into CATEGORIE values (3, 'SENIOR');
-insert into CATEGORIE values (4, 'SENIOR');
-insert into CATEGORIE values (5, 'SENIOR');
-insert into CATEGORIE values (6, 'JUNIOR');
-
-commit;
-
 -- EQUIPE
 
-insert into EQUIPE values ( 1, 1) ;
-insert into EQUIPE values ( 2, 2) ;
-insert into EQUIPE values ( 3, 3) ;
-insert into EQUIPE values ( 4, 4) ;
-insert into EQUIPE values ( 5, 5) ;
-insert into EQUIPE values ( 6, 6) ;
+insert into EQUIPE values ( 1, 'SENIOR') ;
+insert into EQUIPE values ( 2, 'SENIOR') ;
+insert into EQUIPE values ( 3, 'SENIOR') ;
+insert into EQUIPE values ( 4, 'SENIOR') ;
+insert into EQUIPE values ( 5, 'SENIOR') ;
+insert into EQUIPE values ( 6, 'JUNIOR') ;
 
 commit ;
 
@@ -94,7 +82,7 @@ insert into RENCONTRE values ( 6   , 3	, '2014-01-13', 93 , 91, 5   , 4) ;
 insert into RENCONTRE values ( 7   , 4	, '2014-01-20', 100, 99, 3   , 1) ; 
 insert into RENCONTRE values ( 8   , 4	, '2014-01-20', 87 , 76, 2   , 5) ;
 insert into RENCONTRE values ( 9   , 5	, '2014-01-23', 102 , 111, 5 , 3) ;
-insert into RENCONTRE values ( 10  , 5	, '2014-01-23', 65 , 100,1   , 4) ;
+insert into RENCONTRE values ( 10  , 5	, '2014-01-23', 65 , 100, 1   , 4) ;
 
 
 commit;
@@ -172,86 +160,51 @@ commit ;
 
 -- PARTICIPATION
 
-insert into PARTICIPATION values (1,2,4,12);
-insert into PARTICIPATION values (2,2,1,19);
-insert into PARTICIPATION values (3,2,3,19);
-insert into PARTICIPATION values (4,2,3,19);
-insert into PARTICIPATION values (5,2,0,20);
 
-insert into PARTICIPATION values (1,4,4,17);
-insert into PARTICIPATION values (2,4,1,20);
-insert into PARTICIPATION values (3,4,3,13);
-insert into PARTICIPATION values (4,4,1,16);
-insert into PARTICIPATION values (5,4,2,20);
 
 insert into PARTICIPATION values (6,1,2,15);
 insert into PARTICIPATION values (7,1,1,20);
 insert into PARTICIPATION values (8,1,0,20);
 insert into PARTICIPATION values (9,1,3,16);
 insert into PARTICIPATION values (10,1,2,24);
-
-insert into PARTICIPATION values (6,4,2,15);
-insert into PARTICIPATION values (7,4,3,16);
-insert into PARTICIPATION values (8,4,4,14);
-insert into PARTICIPATION values (9,4,4,15);
-insert into PARTICIPATION values (10,4,4,15);
-
-insert into PARTICIPATION values (21,2,4,25);
-insert into PARTICIPATION values (22,2,1,20);
-insert into PARTICIPATION values (23,2,4,22);
-insert into PARTICIPATION values (24,2,3,23);
-insert into PARTICIPATION values (25,2,2,20);
-
 insert into PARTICIPATION values (16,1,2,18);
 insert into PARTICIPATION values (17,1,4,22);
 insert into PARTICIPATION values (18,1,3,10);
 insert into PARTICIPATION values (19,1,1,10);
 insert into PARTICIPATION values (20,1,3,28);
 
+insert into PARTICIPATION values (1,2,4,12);
+insert into PARTICIPATION values (2,2,1,19);
+insert into PARTICIPATION values (3,2,3,19);
+insert into PARTICIPATION values (4,2,3,19);
+insert into PARTICIPATION values (5,2,0,20);
+insert into PARTICIPATION values (21,2,4,25);
+insert into PARTICIPATION values (22,2,1,20);
+insert into PARTICIPATION values (23,2,4,22);
+insert into PARTICIPATION values (24,2,3,23);
+insert into PARTICIPATION values (25,2,2,20);
+
 insert into PARTICIPATION values (16,3,2,20);
 insert into PARTICIPATION values (17,3,2,15);
 insert into PARTICIPATION values (18,3,3,15);
 insert into PARTICIPATION values (19,3,4,20);
 insert into PARTICIPATION values (20,3,3,29);
-
 insert into PARTICIPATION values (11,3,2,13);
 insert into PARTICIPATION values (12,3,4,18);
 insert into PARTICIPATION values (13,3,3,15);
 insert into PARTICIPATION values (14,3,1,28);
 insert into PARTICIPATION values (15,3,3,26);
 
-insert into PARTICIPATION values (1,10,1,13);
-insert into PARTICIPATION values (2,,3,13);
-insert into PARTICIPATION values (3,10,1,13);
-insert into PARTICIPATION values (4,10,3,13);
-insert into PARTICIPATION values (5,10,2,13);
-insert into PARTICIPATION values (16,10,1,20);
-insert into PARTICIPATION values (17,10,3,20);
-insert into PARTICIPATION values (18,10,2,20);
-insert into PARTICIPATION values (19,10,4,20);
-insert into PARTICIPATION values (20,10,2,20);
-
-insert into PARTICIPATION values (11,9,1,22);
-insert into PARTICIPATION values (12,9,1,17);
-insert into PARTICIPATION values (13,9,1,23);
-insert into PARTICIPATION values (14,9,1,22);
-insert into PARTICIPATION values (15,9,2,18);
-insert into PARTICIPATION values (21,9,1,26);
-insert into PARTICIPATION values (22,9,1,18);
-insert into PARTICIPATION values (23,9,2,30);
-insert into PARTICIPATION values (24,9,1,22);
-insert into PARTICIPATION values (25,9,2,15);
-
-insert into PARTICIPATION values (11,8,1,15);
-insert into PARTICIPATION values (12,8,1,14);
-insert into PARTICIPATION values (13,8,1,15);
-insert into PARTICIPATION values (14,8,1,14);
-insert into PARTICIPATION values (15,8,2,18);
-insert into PARTICIPATION values (6,8,1,17);
-insert into PARTICIPATION values (7,8,1,17);
-insert into PARTICIPATION values (8,8,2,17);
-insert into PARTICIPATION values (9,8,1,20);
-insert into PARTICIPATION values (10,8,2,16);
+insert into PARTICIPATION values (6,4,2,15);
+insert into PARTICIPATION values (7,4,3,16);
+insert into PARTICIPATION values (8,4,4,14);
+insert into PARTICIPATION values (9,4,4,15);
+insert into PARTICIPATION values (10,4,4,15);
+insert into PARTICIPATION values (1,4,4,17);
+insert into PARTICIPATION values (2,4,1,20);
+insert into PARTICIPATION values (3,4,3,13);
+insert into PARTICIPATION values (4,4,1,16);
+insert into PARTICIPATION values (5,4,2,20);
 
 insert into PARTICIPATION values (21,5,1,18);
 insert into PARTICIPATION values (22,5,1,18);
@@ -264,16 +217,61 @@ insert into PARTICIPATION values (8,5,2,16);
 insert into PARTICIPATION values (9,5,1,16);
 insert into PARTICIPATION values (10,5,2,14);
 
-insert into PARTICIPATION values (16,6,1,20);
-insert into PARTICIPATION values (17,6,1,15);
-insert into PARTICIPATION values (18,6,1,24);
-insert into PARTICIPATION values (19,6,1,17);
-insert into PARTICIPATION values (20,6,2,23);
-insert into PARTICIPATION values (21,6,1,20);
-insert into PARTICIPATION values (22,6,1,25);
-insert into PARTICIPATION values (23,6,1,15);
-insert into PARTICIPATION values (24,6,1,27);
-insert into PARTICIPATION values (25,6,2,13);
+insert into PARTICIPATION values (11,6,1,33);
+insert into PARTICIPATION values (12,6,1,10);
+insert into PARTICIPATION values (13,6,1,15);
+insert into PARTICIPATION values (14,6,1,25);
+insert into PARTICIPATION values (15,6,2,10);
+insert into PARTICIPATION values (1,6,1,25);
+insert into PARTICIPATION values (2,6,1,22);
+insert into PARTICIPATION values (3,6,1,28);
+insert into PARTICIPATION values (4,6,1,7);
+insert into PARTICIPATION values (5,6,2,9);
+
+insert into PARTICIPATION values (16,7,1,20);
+insert into PARTICIPATION values (17,7,1,15);
+insert into PARTICIPATION values (18,7,1,24);
+insert into PARTICIPATION values (19,7,1,17);
+insert into PARTICIPATION values (20,7,2,23);
+insert into PARTICIPATION values (21,7,1,20);
+insert into PARTICIPATION values (22,7,1,25);
+insert into PARTICIPATION values (23,7,1,15);
+insert into PARTICIPATION values (24,7,1,27);
+insert into PARTICIPATION values (25,7,2,13);
+
+insert into PARTICIPATION values (11,8,1,15);
+insert into PARTICIPATION values (12,8,1,14);
+insert into PARTICIPATION values (13,8,1,15);
+insert into PARTICIPATION values (14,8,1,14);
+insert into PARTICIPATION values (15,8,2,18);
+insert into PARTICIPATION values (6,8,1,17);
+insert into PARTICIPATION values (7,8,1,17);
+insert into PARTICIPATION values (8,8,2,17);
+insert into PARTICIPATION values (9,8,1,20);
+insert into PARTICIPATION values (10,8,2,16);
+
+insert into PARTICIPATION values (11,9,1,22);
+insert into PARTICIPATION values (12,9,1,17);
+insert into PARTICIPATION values (13,9,1,23);
+insert into PARTICIPATION values (14,9,1,22);
+insert into PARTICIPATION values (15,9,2,18);
+insert into PARTICIPATION values (21,9,1,26);
+insert into PARTICIPATION values (22,9,1,18);
+insert into PARTICIPATION values (23,9,2,30);
+insert into PARTICIPATION values (24,9,1,22);
+insert into PARTICIPATION values (25,9,2,15);
+
+insert into PARTICIPATION values (1,10,1,13);
+insert into PARTICIPATION values (2,10,3,13);
+insert into PARTICIPATION values (3,10,1,13);
+insert into PARTICIPATION values (4,10,3,13);
+insert into PARTICIPATION values (5,10,2,13);
+insert into PARTICIPATION values (16,10,1,20);
+insert into PARTICIPATION values (17,10,3,20);
+insert into PARTICIPATION values (18,10,2,20);
+insert into PARTICIPATION values (19,10,4,20);
+insert into PARTICIPATION values (20,10,2,20);
+
 
 -- ============================================================
 --    verification des donnees
@@ -283,5 +281,4 @@ select count(*),'= 5 ?','CLUB' from CLUB
 union
 select count(*),'= 6 ?','RESPONSABLE' from RESPONSABLE
 union
-select count(*),'= 4 ?','RENCONTRE' from RENCONTRE 
-
+select count(*),'= 10 ?','RENCONTRE' from RENCONTRE 
