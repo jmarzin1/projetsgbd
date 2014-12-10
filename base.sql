@@ -53,25 +53,14 @@ create table ENTRAINEUR
 );
 
 -- ============================================================
---   Table : CATEGORIE
--- ============================================================
-create table CATEGORIE
-(
-    NUMERO_CATEGORIE    INT(11)     not null auto_increment,
-    NOM_CATEGORIE       CHAR(20),
-    constraint pk_categorie primary key (NUMERO_CATEGORIE)
-);
-
--- ============================================================
 --   Table : EQUIPE
 -- ============================================================
 create table EQUIPE
 (
     NUMERO_EQUIPE       INT(11) not null auto_increment,
-    NUMERO_CATEGORIE    INT(11) not null,
-    constraint pk_equipe primary key (NUMERO_EQUIPE),
-    constraint fk1_equipe foreign key (NUMERO_CATEGORIE)
-        references CATEGORIE (NUMERO_CATEGORIE)
+    NOM_CATEGORIE    CHAR(20) not null,
+    constraint pk_equipe primary key (NUMERO_EQUIPE)
+ 
 );
 
 -- ============================================================
