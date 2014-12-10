@@ -20,7 +20,6 @@ class AjoutJoueurRepository extends DatabaseConnector {
 	    ));
 	    
 	    $nolicence = $this->db->lastInsertId();
-	    echo $nolicence;
 	    $req = $this->db->prepare(self::LINK);
 	    $req->execute(array(
 		':NUMERO_CLUB' => $this->newjoueur->noclub,
