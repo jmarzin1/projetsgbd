@@ -1,23 +1,21 @@
-<?php include("header.php"); ?>
-<?php
-    include("connexionbase.php");
-    include("requetes.php");
-?>
+<?php include("models/entraineur.php"); ?>
 
+<?php include("header.php"); ?>
 <p>
     <?php
-        $reponse = NULL;
-        if (isset($_GET['noclub']))
-        {
-            // 1 : On force la conversion en nombre entier
-            $_GET['noclub'] = (int) $_GET['noclub'];
-            $noclub = mysql_real_escape_string($_GET['noclub']);
-
-            requeteEntraineur($noclub, $reponse, $bdd);
-
-        } else {
-            requeteGenEntraineur($reponse, $bdd);
+    $entraineurRepository = new EntraineurRepository();
+    if (isset($_GET['id'])) {
+        $_GET['id'] = (int) $_GET['id'];
+        $id = mysql_real_escape_string($_GET['id']);
+        foreach($entraineurRepository->findByClubId($id) as $entraineur) {
+            $entraineur->toStringClub();
         }
+    } else {
+        foreach ($entraineurRepository->findAll() as $entraineur) {
+            $entraineur->toString();
+        }
+    }
+    
     ?>
 </p>
 <?php include("footer.php"); ?>
