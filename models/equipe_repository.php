@@ -19,7 +19,7 @@ class EquipeRepository extends DatabaseConnector {
 	while ($data = $reponse->fetch()) {
             $equipe = new Equipe();
             $equipe->noequipe = $data['NUMERO_EQUIPE'];
-	    $equipe->nocategorie = $data['NUMERO_CATEGORIE'];
+	    $equipe->nomcategorie = $data['NOM_CATEGORIE'];
 	    $equipe->nomclub = $data['NOM_CLUB'];
             array_push($equipes, $equipe);
         }
@@ -35,7 +35,7 @@ class EquipeRepository extends DatabaseConnector {
 	while ($data = $reponse->fetch()) {
             $equipe = new Equipe();
             $equipe->noequipe = $data['NUMERO_EQUIPE'];
-	    $equipe->nocategorie = $data['NUMERO_CATEGORIE'];
+	    $equipe->nomcategorie = $data['NOM_CATEGORIE'];
             array_push($equipes, $equipe);
         }
         $reponse->closeCursor();
