@@ -1,12 +1,11 @@
-<?php include("models/ajoutClub.php"); ?>
+<?php include("models/club.php"); ?>
 
 <?php include("header.php"); ?>
 <p>
     <?php
-    $ajoutClubRepository = new AjoutClubRepository();
-    $nomclub = $_POST['nomclub'];
-    $localisationclub = $_POST['localisation'];
-    $ajoutClubRepository->clubPrepare($localisationclub, $nomclub);
-    $ajoutClubRepository->clubAdd();
+    $club = new Club();
+    $club->setNom($_POST['nomclub']);
+    $club->setLocalisation($_POST['localisation']);
+    $club->save();
 ?>
 <?php include("footer.php"); ?>

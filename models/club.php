@@ -2,7 +2,7 @@
 
 include("models/club_repository.php");
 
-class Club {
+class Club extends DatabaseConnector {
     const ADD = "INSERT INTO CLUB (NOM_CLUB, LOCALISATION)  VALUES(:NOM_CLUB, :LOCALISATION)";
 
     private $id;
@@ -23,7 +23,7 @@ class Club {
         }
     }
 
-    public function setName($name) {
+    public function setNom($name) {
         $this->name = $name;
     }
 

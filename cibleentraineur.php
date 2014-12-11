@@ -1,21 +1,15 @@
-<?php include("models/ajoutEntraineur.php"); ?>
+<?php include("models/entraineur.php"); ?>
 
 <?php include("header.php"); ?>
 
 <p>
     <?php
-    $ajoutEntraineurRepository = new AjoutEntraineurRepository();
-    $noclub = $_POST['noclub'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $date = $_POST['date'];
-    if (($noclub != NULL) AND ($nom != NULL) AND ($prenom != NULL) AND ($date != NULL)) {
-	$ajoutEntraineurRepository->entraineurPrepare($noclub, $nom, $prenom, $date);
-	$ajoutEntraineurRepository->entraineurAdd();
-    }
-    else {
-	echo "Tous les champs n'ont pas été renseignés<br> Ajout impossible";
-    }
+        $entraineur = new Entraineur();
+        $entraineur->setNoclub($_POST['noclub']);
+        $entraineur->setNom($_POST['nom']);
+        $entraineur->setPrenom($_POST['prenom']);
+        $entraineur->setDate($_POST['date']);
+        $entraineur->save();
     ?>
 </p>
 <?php include("footer.php"); ?>
