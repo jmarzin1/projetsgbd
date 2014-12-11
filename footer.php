@@ -1,6 +1,3 @@
-        <footer>
-            <p>Réalisé par sdellac, gdouezangrard, jmarzin<br />
-        </footer>
         <!-- jQuery CDN -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <!-- jQuery local fallback -->
