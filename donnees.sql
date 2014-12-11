@@ -28,7 +28,7 @@ insert into RESPONSABLE values (2, 1, 'JACQUES', 'MARCHAND', 'TRESORIER');
 insert into RESPONSABLE values (3, 2, 'FREDERIC', 'LEJEUNE', 'PRESIDENT');
 insert into RESPONSABLE values (4, 3, 'JULES', 'LE BRETON', 'PRESIDENT');
 insert into RESPONSABLE values (5, 4, 'PASCAL', 'BONHOMME', 'PRESIDENT');
-insert into RESPONSABLE values (6, 5, 'CECILE', 'PICARD', 'PRESIDENTE');
+insert into RESPONSABLE values (6, 5, 'CECILE', 'PICARD', 'PRESIDENT');
 commit;
 -- EQUIPE
 insert into EQUIPE values ( 1, 'SENIOR') ;
