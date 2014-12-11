@@ -7,7 +7,7 @@ class StatsEquipe {
     public $nbdefaite;
     public $nbnul;
     public $moyennepoints;
-    public $noequipe;    
+    public $noequipe;
 
     public function toString() {
         echo "Equipe $this->noequipe: $this->nbvictoire victoires<br>";

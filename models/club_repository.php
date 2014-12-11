@@ -8,7 +8,7 @@ class ClubRepository extends DatabaseConnector {
     const FIND_BY_ID = "SELECT * FROM CLUB WHERE NUMERO_CLUB ="; 
 
     public function findById($id) {
-	$reponse = $this->db->query(self::FIND_BY_ID ."'$id'");
+        $reponse = $this->db->query(self::FIND_BY_ID ."'$id'");
 
         $clubs = array();
         while ($data = $reponse->fetch()) {

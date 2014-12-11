@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include("models/rencontre_repository.php");
 
@@ -12,7 +12,7 @@ class Rencontre {
     public $equipeexterieur;
 
     public function toString() {
-	echo "Rencontre $this->norencontre journée $this->nojournee date: $this->date [équipe $this->equipedomicile] $this->scoredomicile - $this->scoreexterieur [équipe $this->equipeexterieur]<br>";
+        echo "Rencontre $this->norencontre journée $this->nojournee date: $this->date [équipe $this->equipedomicile] $this->scoredomicile - $this->scoreexterieur [équipe $this->equipeexterieur]<br>";
     }
 }
 
