@@ -124,9 +124,9 @@ insert into JOUEUR values (40, 'Adresse 40', 'PRENOM40', 'NOM40','1997-10-10', 8
 commit;
 -- ENTREE
 insert into ENTREE values (4, 1, '2007-01-10');
-insert into ENTREE values (4, 2, '2007-28-09');
+insert into ENTREE values (4, 2, '2007-09-29');
 insert into ENTREE values (4, 3, '2007-01-10');
-insert into ENTREE values (4, 4, '2007-28-09');
+insert into ENTREE values (4, 4, '2007-10-09');
 insert into ENTREE values (4, 5, '2007-01-10');
 insert into ENTREE values (2, 6, '2011-07-31');
 insert into ENTREE values (2, 7, '2011-07-30');
