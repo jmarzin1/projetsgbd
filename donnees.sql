@@ -41,11 +41,11 @@ insert into EQUIPE values ( 7, 'JUNIOR') ;
 insert into EQUIPE values ( 8, 'JUNIOR') ;
 commit ;
 -- ENTRAINEUR
-insert into ENTRAINEUR values (1, 'PRENOM ENTRAINEUR 1', 'NOM ENTRAINEUR 1');
-insert into ENTRAINEUR values (2, 'PRENOM ENTRAINEUR 2', 'NOM ENTRAINEUR 2');
-insert into ENTRAINEUR values (3, 'PRENOM ENTRAINEUR 3', 'NOM ENTRAINEUR 3');
-insert into ENTRAINEUR values (4, 'PRENOM ENTRAINEUR 4', 'NOM ENTRAINEUR 4');
-insert into ENTRAINEUR values (5, 'PRENOM ENTRAINEUR 5', 'NOM ENTRAINEUR 5');
+insert into ENTRAINEUR values (1, 'Sylvain', 'BARE');
+insert into ENTRAINEUR values (2, 'Denis', 'CALVARIN');
+insert into ENTRAINEUR values (3, 'Fred', 'TERMET');
+insert into ENTRAINEUR values (4, 'Quentin', 'STEPHAN');
+insert into ENTRAINEUR values (5, 'Mathieu', 'SAGET');
 commit;
 -- ENTRAINE
 insert into ENTRAINE values (1, 2);
@@ -111,16 +111,16 @@ insert into JOUEUR values (27, '112 ALLEE DES COQUELICOTS', 'JÉRÉMY', 'CAPRE',
 insert into JOUEUR values (28, '11 BOULEVARD GEORGES V', 'ÉTIENNE', 'RAMIREZ', '1997-08-16', 6);
 insert into JOUEUR values (29, '124 ROUTE DE BEGLES', 'SIMON', 'BERGER', '1997-06-02', 6);
 insert into JOUEUR values (30, '67 ROUTE DU QUAI', 'GAËL', 'BILLARD', '1997-08-27', 6);
-insert into JOUEUR values (31, 'Adresse 31', 'PRENOM31', 'NOM31','1997-01-01', 7);
-insert into JOUEUR values (32, 'Adresse 32', 'PRENOM32', 'NOM32','1997-02-02', 7);
-insert into JOUEUR values (33, 'Adresse 33', 'PRENOM33', 'NOM33','1997-03-03', 7);
-insert into JOUEUR values (34, 'Adresse 34', 'PRENOM34', 'NOM34','1997-04-04', 7);
-insert into JOUEUR values (35, 'Adresse 35', 'PRENOM35', 'NOM35','1997-05-05', 7);
-insert into JOUEUR values (36, 'Adresse 36', 'PRENOM36', 'NOM36','1997-06-06', 8);
-insert into JOUEUR values (37, 'Adresse 37', 'PRENOM37', 'NOM37','1997-08-07', 8);
-insert into JOUEUR values (38, 'Adresse 38', 'PRENOM38', 'NOM38','1997-07-08', 8);
-insert into JOUEUR values (39, 'Adresse 39', 'PRENOM39', 'NOM39','1997-09-09', 8);
-insert into JOUEUR values (40, 'Adresse 40', 'PRENOM40', 'NOM40','1997-10-10', 8);
+insert into JOUEUR values (31, '44 ROUTE DE BREST', 'ERIC', 'NOM31','1997-01-01', 7);
+insert into JOUEUR values (32, '67 AVENUE ÉMILE ZOLA', 'THOMAS', 'GABRIEL','1997-02-02', 7);
+insert into JOUEUR values (33, '12 RUE VICTOR HUGO', 'BENOIT', 'CHERRAR','1997-03-03', 7);
+insert into JOUEUR values (34, '8 PLACE DE LA LIBERTÉ', 'PIERRE', 'LE GOFF','1997-04-04', 7);
+insert into JOUEUR values (35, '23 AVENUE DE LA LIBÉRATION', 'THIBAULT', 'CESAR','1997-05-05', 7);
+insert into JOUEUR values (36, '45 COURS GAMBETTA', 'JORDAN', 'AUGUSTIN','1997-06-06', 8);
+insert into JOUEUR values (37, '35 RUE DES DOUVES', 'MAXIME', 'QUERRIEN','1997-08-07', 8);
+insert into JOUEUR values (38, '9 COURS GALIENI', 'MAXENCE', 'MICHEL','1997-07-08', 8);
+insert into JOUEUR values (39, '18 RUE DES MOULINS', 'MATEO', 'JAMET','1997-09-09', 8);
+insert into JOUEUR values (40, '2 ROUTE DE SIAM', 'MATHIS', 'LAURENT','1997-10-10', 8);
 commit;
 -- ENTREE
 insert into ENTREE values (4, 1, '2007-01-10');
