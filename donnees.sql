@@ -175,6 +175,7 @@ insert into PARTICIPATION values (17,1,4,22);
 insert into PARTICIPATION values (18,1,3,10);
 insert into PARTICIPATION values (19,1,1,10);
 insert into PARTICIPATION values (20,1,3,28);
+
 insert into PARTICIPATION values (1,2,4,12);
 insert into PARTICIPATION values (2,2,1,19);
 insert into PARTICIPATION values (3,2,3,19);
@@ -185,6 +186,7 @@ insert into PARTICIPATION values (22,2,1,20);
 insert into PARTICIPATION values (23,2,4,22);
 insert into PARTICIPATION values (24,2,3,23);
 insert into PARTICIPATION values (25,2,2,20);
+
 insert into PARTICIPATION values (16,3,2,20);
 insert into PARTICIPATION values (17,3,2,15);
 insert into PARTICIPATION values (18,3,3,15);
@@ -195,6 +197,7 @@ insert into PARTICIPATION values (12,3,4,18);
 insert into PARTICIPATION values (13,3,3,15);
 insert into PARTICIPATION values (14,3,1,28);
 insert into PARTICIPATION values (15,3,3,26);
+
 insert into PARTICIPATION values (6,4,2,15);
 insert into PARTICIPATION values (7,4,3,16);
 insert into PARTICIPATION values (8,4,4,14);
@@ -205,6 +208,7 @@ insert into PARTICIPATION values (2,4,1,20);
 insert into PARTICIPATION values (3,4,3,13);
 insert into PARTICIPATION values (4,4,1,16);
 insert into PARTICIPATION values (5,4,2,20);
+
 insert into PARTICIPATION values (21,5,1,18);
 insert into PARTICIPATION values (22,5,1,18);
 insert into PARTICIPATION values (23,5,1,14);
@@ -215,6 +219,7 @@ insert into PARTICIPATION values (7,5,1,16);
 insert into PARTICIPATION values (8,5,2,16);
 insert into PARTICIPATION values (9,5,1,16);
 insert into PARTICIPATION values (10,5,2,14);
+
 insert into PARTICIPATION values (11,6,1,33);
 insert into PARTICIPATION values (12,6,1,10);
 insert into PARTICIPATION values (13,6,1,15);
@@ -225,6 +230,7 @@ insert into PARTICIPATION values (2,6,1,22);
 insert into PARTICIPATION values (3,6,1,28);
 insert into PARTICIPATION values (4,6,1,7);
 insert into PARTICIPATION values (5,6,2,9);
+
 insert into PARTICIPATION values (16,7,1,20);
 insert into PARTICIPATION values (17,7,1,15);
 insert into PARTICIPATION values (18,7,1,24);
@@ -235,6 +241,7 @@ insert into PARTICIPATION values (22,7,1,25);
 insert into PARTICIPATION values (23,7,1,15);
 insert into PARTICIPATION values (24,7,1,27);
 insert into PARTICIPATION values (25,7,2,13);
+
 insert into PARTICIPATION values (11,8,1,15);
 insert into PARTICIPATION values (12,8,1,14);
 insert into PARTICIPATION values (13,8,1,15);
@@ -245,6 +252,7 @@ insert into PARTICIPATION values (7,8,1,17);
 insert into PARTICIPATION values (8,8,2,17);
 insert into PARTICIPATION values (9,8,1,20);
 insert into PARTICIPATION values (10,8,2,16);
+
 insert into PARTICIPATION values (11,9,1,22);
 insert into PARTICIPATION values (12,9,1,17);
 insert into PARTICIPATION values (13,9,1,23);
@@ -255,6 +263,7 @@ insert into PARTICIPATION values (22,9,1,18);
 insert into PARTICIPATION values (23,9,2,30);
 insert into PARTICIPATION values (24,9,1,22);
 insert into PARTICIPATION values (25,9,2,15);
+
 insert into PARTICIPATION values (1,10,1,13);
 insert into PARTICIPATION values (2,10,3,13);
 insert into PARTICIPATION values (3,10,1,13);
@@ -265,6 +274,7 @@ insert into PARTICIPATION values (17,10,3,20);
 insert into PARTICIPATION values (18,10,2,20);
 insert into PARTICIPATION values (19,10,4,20);
 insert into PARTICIPATION values (20,10,2,20);
+
 insert into PARTICIPATION values (26,11,4,22);
 insert into PARTICIPATION values (27,11,2,20);
 insert into PARTICIPATION values (28,11,1,20);
@@ -275,6 +285,7 @@ insert into PARTICIPATION values (32,11,2,20);
 insert into PARTICIPATION values (33,11,4,20);
 insert into PARTICIPATION values (34,11,1,20);
 insert into PARTICIPATION values (35,11,3,21);
+
 insert into PARTICIPATION values (31,12,1,18);
 insert into PARTICIPATION values (32,12,2,16);
 insert into PARTICIPATION values (33,12,4,20);
@@ -285,6 +296,7 @@ insert into PARTICIPATION values (37,12,2,20);
 insert into PARTICIPATION values (38,12,4,18);
 insert into PARTICIPATION values (39,12,1,16);
 insert into PARTICIPATION values (40,12,3,14);
+
 insert into PARTICIPATION values (36,13,1,14);
 insert into PARTICIPATION values (37,13,2,22);
 insert into PARTICIPATION values (38,13,4,20);
