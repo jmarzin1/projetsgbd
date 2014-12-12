@@ -41,11 +41,11 @@ insert into EQUIPE values ( 7, 'JUNIOR') ;
 insert into EQUIPE values ( 8, 'JUNIOR') ;
 commit ;
 -- ENTRAINEUR
-insert into ENTRAINEUR values (1, 'Sylvain', 'BARE');
-insert into ENTRAINEUR values (2, 'Denis', 'CALVARIN');
-insert into ENTRAINEUR values (3, 'Fred', 'TERMET');
-insert into ENTRAINEUR values (4, 'Quentin', 'STEPHAN');
-insert into ENTRAINEUR values (5, 'Mathieu', 'SAGET');
+insert into ENTRAINEUR values (1, 'SYLVAIN', 'BARE');
+insert into ENTRAINEUR values (2, 'DENIS', 'CALVARIN');
+insert into ENTRAINEUR values (3, 'FRED', 'TERMET');
+insert into ENTRAINEUR values (4, 'QUENTIN', 'STEPHAN');
+insert into ENTRAINEUR values (5, 'MATHIEU', 'SAGET');
 commit;
 -- ENTRAINE
 insert into ENTRAINE values (1, 2);
