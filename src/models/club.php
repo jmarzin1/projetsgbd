@@ -1,12 +1,12 @@
 <?php
 
-include("models/club_repository.php");
+require_once("database_connector.php");
 
 class Club extends DatabaseConnector {
     const ADD = "INSERT INTO CLUB (NOM_CLUB, LOCALISATION)  VALUES(:NOM_CLUB, :LOCALISATION)";
 
     private $id;
-    private $name;
+    private $nom;
     private $localisation;
 
     public function save() {
@@ -14,7 +14,7 @@ class Club extends DatabaseConnector {
             $req = $this->db->prepare(self::ADD);
 
             $req->execute(array(
-                ':NOM_CLUB' => $this->name,
+                ':NOM_CLUB' => $this->nom,
                 ':LOCALISATION' => $this->localisation
             ));
             echo 'Le CLUB a bien été ajouté !';
@@ -23,8 +23,24 @@ class Club extends DatabaseConnector {
         }
     }
 
-    public function setNom($name) {
-        $this->name = $name;
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getNom() {
+        return $this->nom;
+    }
+
+    public function setNom($nom) {
+        $this->nom = $nom;
+    }
+
+    public function getLocalisation() {
+        return $this->localisation;
     }
 
     public function setLocalisation($localisation) {

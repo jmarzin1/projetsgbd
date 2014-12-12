@@ -1,7 +1,6 @@
-<?php 
+<?php
 
-include_once("models/database_connector.php");
-include_once("models/entraineur.php");
+require_once("entraineur.php");
 
 class EntraineurRepository extends DatabaseConnector {
     const FIND_ALL = "SELECT * FROM ENTRAINEUR";
@@ -11,21 +10,19 @@ class EntraineurRepository extends DatabaseConnector {
         AND ENTRAINEUR.NUMERO_ENTRAINEUR = ANIMATION.NUMERO_ENTRAINEUR
         AND CLUB.NUMERO_CLUB =";
 
-    public function findByClubId($id) {
-        $reponse = $this->db->query(self::FIND_BY_CLUB_ID . "'$id'");
+    public function findOneByClubId($id) {
+        $reponse = $this->db->query(self::FIND_BY_CLUB_ID . "'$id'" . " LIMIT 1");
 
         $entraineurs = array();
-        while ($data = $reponse->fetch()) {
-            $entraineur = new Entraineur();
-            $entraineur->noentraineur = $data['NUMERO_ENTRAINEUR'];
-            $entraineur->prenom = $data['PRENOM_ENTRAINEUR'];
-            $entraineur->nom = $data['NOM_ENTRAINEUR'];
-            $entraineur->nomclub = $data['NOM_CLUB'];
-            array_push($entraineurs, $entraineur);
-        }
+        $data = $reponse->fetch();
+        $entraineur = new Entraineur();
+        $entraineur->setId($data['NUMERO_ENTRAINEUR']);
+        $entraineur->setPrenom($data['PRENOM_ENTRAINEUR']);
+        $entraineur->setNom($data['NOM_ENTRAINEUR']);
+
         $reponse->closeCursor();
 
-        return $entraineurs;
+        return $entraineur;
     }
 
     public function findAll() {
