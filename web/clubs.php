@@ -17,26 +17,27 @@ if (isset($_GET['action'])) {
     switch ($_GET['action']) {
     case "ajouter":
         break;
+    case "editer":
+        break;
     case "supprimer":
         break;
     case "voir":
         if (isset($_GET['id'])) {
             $club_id = intval($_GET['id']);
+
             render("clubs/voir", array(
                 'club' => $cr->findById($club_id),
                 'entraineur' => $er->findOneByClubId($club_id),
                 'responsables' => $rr->findByClubId($club_id)
             ));
         } else {
-            goto MISSING_ID;
+            $_SESSION['flash'] = "Aucun id renseigné";
+
+            render("clubs/liste", array('clubs' => $cr->findAll()));
         }
         break;
     default:
-        PIPE:
-            header("Location: " . $config['url'] . "/" . basename(__FILE__));
-        MISSING_ID:
-            $_SESSION['flash'] = "Aucun id renseigné";
-            goto PIPE;
+        render("clubs/liste", array('clubs' => $cr->findAll()));
     }
 } else {
     render("clubs/liste", array('clubs' => $cr->findAll()));
