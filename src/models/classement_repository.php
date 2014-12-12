@@ -49,11 +49,11 @@ class ClassementRepository extends DatabaseConnector {
 		 group by NUMERO_EQUIPE) as DEF
 		     
 		 where DEF.NUMERO_EQUIPE = VIC.NUMERO_EQUIPE
-		     and NUL.NUMERO_EQUIPE = VIC.NUMERO_EQUIPE
-		     order by POINTS desc, GOALAVERAGE desc";
-    
-    public function makeClassement() {
-	$reponse = $this->db->query(self::EXEC);
+		     and NUL.NUMERO_EQUIPE = VIC.NUMERO_EQUIPE";
+		     
+    public function makeClassement($categorie) {
+	$reponse = $this->db->query(self::EXEC . "and EQUIPE.NUMERO_EQUIPE = VIC.NUMERO_EQUIPE
+		     and EQUIPE.NOM_CATEGORIE =" . $categorie . "order by POINTS desc, GOALAVERAGE desc");
 
 	$classements = array();
 	while ($data = $reponse->fetch()) {
@@ -70,6 +70,26 @@ class ClassementRepository extends DatabaseConnector {
 
         return $classements;
     }
+
+    public function makeGenClassement() {
+	$reponse = $this->db->query(self::EXEC . "order by POINTS desc, GOALAVERAGE desc");
+
+	$classements = array();
+	while ($data = $reponse->fetch()) {
+            $classement = new Classement();
+            $classement->noequipe = $data['NUMERO_EQUIPE'];
+	    $classement->nbvictoires = $data['NOMBRE_VICTOIRES'];
+            $classement->nbnuls = $data['NOMBRE_NULS'];
+            $classement->nbdefaites = $data['NOMBRE_DEFAITES'];
+            $classement->points = $data['POINTS'];
+            $classement->diff = $data['GOALAVERAGE'];
+            array_push($classements, $classement);
+        }
+        $reponse->closeCursor();
+
+        return $classements;
+    }
+
 }
 
 ?>
