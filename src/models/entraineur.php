@@ -8,6 +8,7 @@ class Entraineur extends DatabaseConnector {
     private $id;
     private $nom;
     private $prenom;
+    private $date;
 
     public function save() {
         try {
@@ -46,6 +47,14 @@ class Entraineur extends DatabaseConnector {
 
     public function setPrenom($prenom) {
         $this->prenom = $prenom;
+    }
+
+    public function getDate() {
+        return $this->date;
+    }
+
+    public function setDate($date) {
+        $this->date = $date;
     }
 
     public function toString() {

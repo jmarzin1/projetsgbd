@@ -7,7 +7,7 @@
         </span>
     </h2>
 
-    <h3><small>Entraineur: </small><a href="entraineurs.php?action=voir&id=<?php echo $entraineur->getId() ?>"><?php echo $entraineur->getNom() . " " . $entraineur->getPrenom() ?></a></h3>
+    <h3><small>Entraineur </small><a href="entraineurs.php?action=voir&id=<?php echo $entraineur->getId() ?>"><?php echo $entraineur->getNom() . " " . $entraineur->getPrenom() ?></a><small> depuis le </small> <?php echo $entraineur->getDate() ?></h3>
 
     <h3><small>Liste des </small>Responsables</h3>
 
@@ -31,8 +31,7 @@
                             <td>" . $responsable->getPrenom() . "</td>
                             <td>" . $responsable->getFonction() . "</td>
                             <td class='text-center'>
-                                <a href='?action=voir&id=" . $club->getId() . "' data-tooltip aria-haspopup='true' class='has-tip' title='Voir ce responsable' style='margin-right: .5em'><i class='fa fa-search'></i></a>
-                                <a href='?action=supprimer&id=" . $club->getId() . "' data-tooltip aria-haspopup='true' class='has-tip' title='Supprimer ce responsable du club'><i class='fa fa-times'></i></a>
+                                <a href='/responsables.php?action=supprimer&id=" . $responsable->getId() . "&club_id=" . $club->getId() . "' data-tooltip aria-haspopup='true' class='has-tip' title='Supprimer ce responsable du club'><i class='fa fa-times'></i></a>
                             </td>
                         </tr>
                 ";
@@ -49,19 +48,23 @@
                 <th width="50">Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>
-                <th>Fonction</th>
+                <th>Adresse</th>
+                <th>Date de naissance</th>
+                <th>Date d'entrée</th>
                 <th width=100>Actions <a href="?action=ajouter" data-tooltip aria-haspopup="true" class="has-tip right" title="Ajouter un responsable pour ce club"><i class="fa fa-plus"></i></a></th>
             </tr>
         </thead>
         <tbody>
             <?php
-                foreach ($responsables as $responsable) {
+                foreach ($joueurs as $joueur) {
                     echo "
                         <tr>
-                            <td>" . $responsable->getId() . "</td>
-                            <td>" . $responsable->getNom() . "</td>
-                            <td>" . $responsable->getPrenom() . "</td>
-                            <td>" . $responsable->getFonction() . "</td>
+                            <td>" . $joueur->getId() . "</td>
+                            <td>" . $joueur->getNom() . "</td>
+                            <td>" . $joueur->getPrenom() . "</td>
+                            <td>" . $joueur->getAdresse() . "</td>
+                            <td>" . $joueur->getDob() . "</td>
+                            <td>" . $joueur->getDate() . "</td>
                             <td class='text-center'>
                                 <a href='?action=voir&id=" . $club->getId() . "' data-tooltip aria-haspopup='true' class='has-tip' title='Voir ce responsable' style='margin-right: .5em'><i class='fa fa-search'></i></a>
                                 <a href='?action=supprimer&id=" . $club->getId() . "' data-tooltip aria-haspopup='true' class='has-tip' title='Supprimer ce responsable du club'><i class='fa fa-times'></i></a>

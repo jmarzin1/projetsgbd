@@ -1,7 +1,6 @@
 <?php
 
-include_once("models/database_connector.php");
-include_once("models/rencontre.php");
+require_once("rencontre.php");
 
 class RencontreRepository extends DatabaseConnector {
     const FIND_ALL = "SELECT * FROM RENCONTRE";

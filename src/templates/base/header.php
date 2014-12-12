@@ -25,11 +25,7 @@
                 <ul class="right">
                     <li><a href="clubs.php">Clubs</a></li>
                     <li><a href="entraineurs.php">Entraineurs</a></li>
-                    <li><a href="joueurs.php">Joueurs</a></li>
-                    <li><a href="equipes.php">Équipes</a></li>
                     <li><a href="rencontres.php">Rencontres</a></li>
-                    <li><a href="responsables.php">Responsables</a></li>
-                    <li><a href="statistiques.php">Statistiques</a></li>
                 </ul>
             </section>
         </nav>

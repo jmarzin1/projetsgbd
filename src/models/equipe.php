@@ -1,11 +1,26 @@
 <?php
 
-include("models/equipe_repository.php");
+require_once("database_connector.php");
 
 class Equipe {
     private $nomcategorie;
-    private $noequipe;
-    private $nomclub;
+    private $id;
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getNomCategorie() {
+        return $this->nomcategorie;
+    }
+
+    public function setNomCategorie($id) {
+        $this->nomcategorie = $id;
+    }
 
     public function toString() {
         echo "Equipe $this->noequipe de catégorie $this->nomcategorie<br>";

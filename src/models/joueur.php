@@ -1,6 +1,6 @@
 <?php
 
-include_once("models/joueur_repository.php");
+require_once("database_connector.php");
 
 class Joueur extends DatabaseConnector {
     const ADD = "INSERT INTO JOUEUR (ADRESSE_JOUEUR, NOM_JOUEUR, PRENOM_JOUEUR, DATE_NAISSANCE_JOUEUR  )  VALUES(:ADRESSE_JOUEUR, :NOM_JOUEUR, :PRENOM_JOUEUR, :DATE_NAISSANCE_JOUEUR)";
@@ -12,7 +12,6 @@ class Joueur extends DatabaseConnector {
     private $prenom;
     private $date;
     private $dob;
-    private $noequipe;
 
     public function joueurAdd() {
         try {
@@ -39,32 +38,52 @@ class Joueur extends DatabaseConnector {
         }
     }
 
-    public function setNoliscence($nolicence) {
-        $this->nolicence = $nolicence;
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getAdresse() {
+        return $this->addresse;
     }
 
     public function setAdresse($adresse) {
         $this->addresse = $adresse;
     }
 
+    public function getNom() {
+        return $this->nom;
+    }
+
     public function setNom($nom) {
         $this->nom = $nom;
+    }
+
+    public function getPrenom() {
+        return $this->prenom;
     }
 
     public function setPrenom($prenom) {
         $this->prenom = $prenom;
     }
 
+    public function getDate() {
+        return $this->date;
+    }
+
     public function setDate($date) {
         $this->date = implode("-", array_reverse(explode("/", $date)));
     }
 
-    public function setDob($dob) {
-        $this->dob = implode("-", array_reverse(explode("/", $dob)));
+    public function getDob() {
+        return $this->dob;
     }
 
-    public function setNoequipe($noequipe) {
-        $this->noequipe = $noequipe;
+    public function setDob($dob) {
+        $this->dob = implode("-", array_reverse(explode("/", $dob)));
     }
 
     public function toString() {

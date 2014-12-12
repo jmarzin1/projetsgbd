@@ -2,11 +2,24 @@
 
 require_once("database_connector.php");
 
-class Responsable {
+class Responsable extends DatabaseConnector {
+    const DELETE = "DELETE FROM RESPONSABLE WHERE NUMERO_RESPONSABLE = ";
+
     private $id;
     private $prenom;
     private $nom;
     private $fonction;
+
+    public function delete() {
+        try {
+            $req = $this->db->prepare(self::DELETE . $this->id);
+
+            $req->execute();
+            echo 'Le Responsable a bien été supprimé !';
+        } catch (PDOException $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 
     public function getId() {
         return $this->id;

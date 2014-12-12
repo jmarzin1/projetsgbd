@@ -5,7 +5,7 @@ $config = array(
         "dbname" => "projetsql",
         "username" => "jmarzin",
         "password" => "jmarzin",
-        "host" => "localhost"
+        "host" => "mysql.silverwyrda.org"
     ),
     "url" => "http://" . $_SERVER['SERVER_NAME']
 );

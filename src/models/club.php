@@ -3,21 +3,48 @@
 require_once("database_connector.php");
 
 class Club extends DatabaseConnector {
-    const ADD = "INSERT INTO CLUB (NOM_CLUB, LOCALISATION)  VALUES(:NOM_CLUB, :LOCALISATION)";
+    const INSERT = "INSERT INTO CLUB (NOM_CLUB, LOCALISATION)  VALUES(:NOM_CLUB, :LOCALISATION)";
+    const UPDATE = "UPDATE CLUB SET NOM_CLUB=:NOM_CLUB, LOCALISATION=:LOCALISATION WHERE NUMERO_CLUB=";
+    const DELETE = "DELETE FROM CLUB WHERE NUMERO_CLUB = ";
 
     private $id;
     private $nom;
     private $localisation;
 
     public function save() {
-        try {
-            $req = $this->db->prepare(self::ADD);
+        if (isset($this->id)) {
+            try {
+                $req = $this->db->prepare(self::UPDATE . $this->id);
 
-            $req->execute(array(
+                $req->execute(array(
                 ':NOM_CLUB' => $this->nom,
                 ':LOCALISATION' => $this->localisation
             ));
-            echo 'Le CLUB a bien été ajouté !';
+                echo 'Le CLUB a bien été ajouté !';
+            } catch (PDOException $e) {
+                die('Erreur : ' . $e->getMessage());
+            }
+        } else {
+            try {
+                $req = $this->db->prepare(self::INSERT);
+
+                $req->execute(array(
+                    ':NOM_CLUB' => $this->nom,
+                    ':LOCALISATION' => $this->localisation
+                ));
+                echo 'Le CLUB a bien été ajouté !';
+            } catch (PDOException $e) {
+                die('Erreur : ' . $e->getMessage());
+            }
+        }
+    }
+
+    public function delete() {
+        try {
+            $req = $this->db->prepare(self::DELETE . $this->id);
+
+            $req->execute();
+            echo 'Le CLUB a bien été supprimé !';
         } catch (PDOException $e) {
             die('Erreur : ' . $e->getMessage());
         }
@@ -28,7 +55,7 @@ class Club extends DatabaseConnector {
     }
 
     public function setId($id) {
-        $this->id = $id;
+        $this->id = intval($id);
     }
 
     public function getNom() {

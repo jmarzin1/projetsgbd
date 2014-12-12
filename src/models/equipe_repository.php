@@ -1,7 +1,6 @@
 <?php 
 
-include_once("models/database_connector.php");
-include_once("models/equipe.php");
+include_once("equipe.php");
 
 class EquipeRepository extends DatabaseConnector {
     const FIND_ALL = "SELECT * FROM EQUIPE";
@@ -11,16 +10,17 @@ class EquipeRepository extends DatabaseConnector {
         AND ENTRAINE.NUMERO_ENTRAINEUR = ENTRAINEUR.NUMERO_ENTRAINEUR
         AND CLUB.NUMERO_CLUB = ANIMATION.NUMERO_CLUB
         AND CLUB.NUMERO_CLUB =";
+    const FIND_BY_ENTRAINEUR_ID = "SELECT * FROM EQUIPE, ENTRAINE
+        WHERE EQUIPE.NUMERO_EQUIPE = ENTRAINE.NUMERO_EQUIPE AND ENTRAINE.NUMERO_ENTRAINEUR =";
 
-    public function findByClubId($id) {
-        $reponse = $this->db->query(self::FIND_BY_CLUB . "'$id'");
+    public function findByEntraineurId($id) {
+        $reponse = $this->db->query(self::FIND_BY_ENTRAINEUR_ID . "'$id'");
 
         $equipes = array();
         while ($data = $reponse->fetch()) {
             $equipe = new Equipe();
-            $equipe->noequipe = $data['NUMERO_EQUIPE'];
-            $equipe->nomcategorie = $data['NOM_CATEGORIE'];
-            $equipe->nomclub = $data['NOM_CLUB'];
+            $equipe->setId($data['NUMERO_EQUIPE']);
+            $equipe->setNomCategorie($data['NOM_CATEGORIE']);
             array_push($equipes, $equipe);
         }
         $reponse->closeCursor();
